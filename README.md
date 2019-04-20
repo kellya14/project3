@@ -5,10 +5,15 @@
 #Austin Kelly, Chris Pischl, Zoey Koza, Kasey Cottier, and Randy Clark
 
 Includes:
+
 Client Monit Configuration File
 
 Server Monit Configuration File
 
 Kickstart File edited to configure monit on the clients
 
-Test script for solution monitoring on the clients and server VMs
+Monitrc script that pulls from kickstart configurations
+
+Test script for solution monitoring on the clients
+
+Test script for solution monitoring on the server
