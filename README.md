@@ -6,6 +6,9 @@
 
 Includes:
 Client Monit Configuration File
+
 Server Monit Configuration File
-Kickstart Script to configure monit on the clients
-Test scripts for solution monitoring on the clients and server VMs
+
+Kickstart File edited to configure monit on the clients
+
+Test script for solution monitoring on the clients and server VMs
