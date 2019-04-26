@@ -193,25 +193,25 @@ check filesystem "VAR" with path /var
 #
 #
 ##client monitoring
-check host client1team1 with address 10.2.7.
+check host client1team1 with address 10.2.6.28
   start program = "/usr/bin/systemctl start monit"
   stop program = "/usr/bin/systemctl stop monit"
   if failed ping then alert
   if failed port 22 protocol ssh then alert
 
-check host client2team1 with address 10.2.7.
+check host client2team1 with address 10.2.6.29
   start program = "/usr/bin/systemctl start monit"
   stop program = "/usr/bin/systemctl stop monit"
   if failed ping then alert
   if failed port 22 protocol ssh then alert
 
-check host client3team1 with address 10.2.7.
+check host client3team1 with address 10.2.6.30
   start program = "/usr/bin/systemctl start monit"
   stop program = "/usr/bin/systemctl stop monit"
   if failed ping then alert
   if failed port 22 protocol ssh then alert
 
-check host client4team1 with address 10.2.7.
+check host client4team1 with address 10.2.6.32
   start program = "/usr/bin/systemctl start monit"
   stop program = "/usr/bin/systemctl stop monit"
   if failed ping then alert
