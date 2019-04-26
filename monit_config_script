@@ -4,6 +4,11 @@
 #Austin Kelly, Kasey Cottier, Randy Clark, Chris Pischl, and Zoey Koza
 #Finalizes Monit & Syslog Configuration from Kickstart Installs
 
+#if [ "$1" == "-h" ] || [ "$1" == "--help" ]
+#then
+#  echo "Usage: `basename $0` [Start the LDAP Server script by using this command: ./install-ldap-server]" | tee -a ldap-install.log
+#else
+
 #Help menu that displays the script deployment syntax
 if [ "$1" == "-h" ] ; then echo "Usage: `basename $0` [The script must be ran as followed: ./client-monit 'ServerIP' 'AdminEmail']" ; exit 0 ; fi
 
