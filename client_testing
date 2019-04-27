@@ -8,38 +8,49 @@ yum -y install stress &&
 echo "Packages installed." &&
 
 #Kill SSH
+kill_ssh () {
 echo "Testing SSH..."
 systemctl stop sshd
 sleep 120
 monit summary | grep ssh
+}
 
 #Kill syslog
+kill_syslog () {
 echo "Testing syslog..."
 systemctl stop rsyslog
 sleep 120
 monit summary | grep rsyslog
+}
 
 #Kill NFS-Client
+kill_nfs () {
 echo "Testing NFS client..."
 systemctl stop nfs
 sleep 120
 monit summary | grep nfs
 echo "NFS-Client testing complete!"
+}
 
 #Kill LDAP-Client
+kill_ldap () {
 echo "Testing LDAP client..."
 systemctl stop nslcd
 sleep 120
 monit summary | grep nslcd
 echo "LDAP-Client testing complete!"
- 
+}
+
 #Overload CPU and MEM with stress tool
+overload_cpu () {
 echo "Testing CPU and memory usage..."
 stress --vm-bytes 256MB --cpu 100 --timeout 60s >& 1 >> /var/log/client-test.log
 monit summary | grep localhost
 echo "CPU and MEM testing complete!"
+}
 
 #Test hard drive alarm
+test_hard_drive () {
 echo "Testing disk usage.."
 dd if=/dev/zero of=/dev/diskhog bs=1M count=100000 >& 1 >> /var/log/client-test.log
 sleep 60
@@ -48,3 +59,11 @@ monit summary | grep Root
 monit summary | grep Var
 rm /dev/diskhog -f >& 1 >> /var/log/client-test.log
 echo "Disk usage testing complete!"
+}
+
+kill_ssh
+kill_syslog
+kill_nfs
+kill_ldap
+overload_cpu
+test_hard_drive
