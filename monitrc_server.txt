@@ -49,21 +49,21 @@ set mailserver 127.0.0.1             	     # primary mailserver
 #
 ## Monit by default uses the following format for alerts if the mail-format
 ## statement is missing::
---8<--
-set mail-format {
-  from:    Monit <monit@$HOST>
-  subject: Monit alert --  $EVENT $SERVICE
-  message: $EVENT Service $SERVICE
-                Date:        $DATE
-                Action:      $ACTION
-                Host:        $HOST
-                Description: $DESCRIPTION
-
-           Your faithful employees,
-           
-	   CIT470 Team 1 Project Managers
-}
---8<--
+##--8<--
+##set mail-format {
+##  from:    Monit <monit@$HOST>
+##  subject: Monit alert --  $EVENT $SERVICE
+##  message: $EVENT Service $SERVICE
+##                Date:        $DATE
+##                Action:      $ACTION
+##                Host:        $HOST
+##                Description: $DESCRIPTION
+##
+##           Your faithful employees,
+##           
+##	   CIT470 Team 1 Project Managers
+##}
+##--8<--
 ##
 #
 #
