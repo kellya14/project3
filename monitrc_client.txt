@@ -111,6 +111,7 @@ check system $HOST
   if cpu usage (system) > 40% then alert
   if cpu usage (wait) > 20% then alert
 #
+
 #
 ## Check if a file exists, checksum, permissions, uid and gid. In addition
 ## to alert recipients in the global section, customized alert can be sent to
