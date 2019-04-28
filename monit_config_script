@@ -9,7 +9,7 @@ then
 else
 #Removes default monit cfg file, downloads modified version and creates a backup
 echo "Configuring Monit..." | tee -a monit-setup.log && rm /etc/monitrc >& 1 >> monit-setup.log
-wget -O monitrc https://raw.githubusercontent.com/kellya14/project3/master/monitrc_client.txt | tee -a monit-setup.log
+wget -O monitrc https://raw.githubusercontent.com/kellya14/project3/master/monitrc_client | tee -a monit-setup.log
 mv monitrc /etc/monitrc && cp /etc/monitrc /etc/monitrc.bak >& 1 >> monit-setup.log && chmod 600 /etc/monitrc >& 1 >> monit-setup.log &&
 #Passes script arguments to the monit configuration file
 sed -i "s/root@localhost/root@$1/g" /etc/monitrc >& 1 >> monit-setup.log && sed -i "s/alert emailhere/alert $2/g" /etc/monitrc >& 1 >> monit-setup.log &&
