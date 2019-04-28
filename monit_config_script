@@ -21,4 +21,6 @@ echo "Configuring remote monitoring..." | tee -a monit-setup.log && sed -i "s/#*
 firewall-cmd --zone=public --add-port=514/udp --permanent | tee -a monit-setup.log
 firewall-cmd --zone=public --add-port=2812/tcp --permanent | tee -a monit-setup.log
 firewall-cmd --reload | tee -a monit-setup.log
+#Configure NFS pidfile
+/sbin/rpc.statd
 fi
