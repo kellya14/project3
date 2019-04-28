@@ -61,7 +61,6 @@ rm /dev/diskhog -f >& 1 >> /var/log/client-test.log
 echo "Disk usage testing complete!"
 }
 
-/sbin/rpc.statd
 kill_ssh
 kill_syslog
 kill_nfs
