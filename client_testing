@@ -52,7 +52,7 @@ echo "CPU and MEM testing complete!"
 #Test hard drive alarm
 test_hard_drive () {
 echo "Testing disk usage.."
-dd if=/dev/zero of=/dev/diskhog bs=1M count=100000 2>&1 /var/log/client-test.log
+dd if=/dev/zero of=/dev/diskhog bs=1M count=100000 2>&1 >> /var/log/client-test.log
 sleep 60
 monit summary | grep Home
 monit summary | grep Root
