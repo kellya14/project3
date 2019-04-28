@@ -17,4 +17,8 @@ sed -i "s/root@localhost/root@$1/g" /etc/monitrc >& 1 >> monit-setup.log && sed 
 echo "Restarting Monit service..." | tee -a monit-setup.log && systemctl restart monit >& 1 >> monit-setup.log && echo "Configuration complete!" | tee -a monit-setup.log
 #appends the serverIP to the syslog cfg file for remote logging
 echo "Configuring remote monitoring..." | tee -a monit-setup.log && sed -i "s/#*.* @@remote-host:514/*.* @$1:514/g" /etc/rsyslog.conf >& 1 >> monit-setup.log && systemctl restart rsyslog >& 1 >> monit-setup.log && echo "Setup complete!" | tee -a monit-setup.log
+#Configure firewall for syslog and monit.
+firewall-cmd --zone=public --add-port=514/udp -–permanent | tee -a monit-setup.log
+firewall-cmd --zone=public --add-port=2812/tcp -–permanent | tee -a monit-setup.log
+firewall-cmd --reload | tee -a monit-setup.log
 fi
