@@ -6,9 +6,9 @@
 
 Description           :              Name of File
 
-Client Monit Configuration File: monitrc_client.txt
+Client Monit Configuration File: monitrc_client
 
-Server Monit Configuration File: monitrc_server.txt
+Server Monit Configuration File: monitrc_server
 
 Kickstart File edited to configure monit on the clients: client-ks.cfg
 
